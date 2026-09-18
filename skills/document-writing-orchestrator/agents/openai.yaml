@@ -1,0 +1,4 @@
+interface:
+  display_name: "Document Writing Orchestrator"
+  short_description: "Draft documents with task-specific review"
+  default_prompt: "Use $document-writing-orchestrator to draft or revise this document and test it against its intended job."
