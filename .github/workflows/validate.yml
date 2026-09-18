@@ -1,3 +1,4 @@
+---
 name: Validate skills
 
 on:
@@ -6,6 +7,9 @@ on:
 
 permissions:
   contents: read
+
+env:
+  DISABLE_TELEMETRY: "1"
 
 jobs:
   validate:
@@ -17,5 +21,29 @@ jobs:
           python-version: "3.11"
       - name: Validate skill packages
         run: python3 scripts/validate.py
-      - name: Smoke-test installation
-        run: python3 scripts/install.py --all --target "$RUNNER_TEMP/skills"
+
+  skills-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Discover skills with the skills CLI
+        run: npx --yes skills@latest add "$GITHUB_WORKSPACE" --list
+      - name: Smoke-test a skills CLI install
+        run: |
+          project="$RUNNER_TEMP/skills-cli-project"
+          mkdir -p "$project"
+          cd "$project"
+          npx --yes skills@latest add "$GITHUB_WORKSPACE" \
+            --skill '*' --agent claude-code --yes --copy
+          status=0
+          for skill in "$GITHUB_WORKSPACE"/skills/*/; do
+            name="$(basename "$skill")"
+            if [ ! -f ".claude/skills/$name/SKILL.md" ]; then
+              echo "error: the skills CLI did not install $name" >&2
+              status=1
+            fi
+          done
+          exit "$status"

@@ -62,9 +62,26 @@ def parse_frontmatter(text: str, path: Path) -> tuple[dict[str, str], str]:
     return fields, text[match.end() :]
 
 
+def strip_code_fences(text: str) -> str:
+    """Drop fenced code blocks so example markdown is not mistaken for real links."""
+    kept: list[str] = []
+    fence = ""
+    for line in text.splitlines():
+        stripped = line.lstrip()
+        if not fence:
+            if stripped.startswith(("```", "~~~")):
+                fence = stripped[0] * (len(stripped) - len(stripped.lstrip(stripped[0])))
+            else:
+                kept.append(line)
+            continue
+        if stripped.startswith(fence) and not stripped[len(fence) :].strip():
+            fence = ""
+    return "\n".join(kept)
+
+
 def validate_local_links(boundary: Path, markdown_path: Path, text: str) -> list[str]:
     errors: list[str] = []
-    for raw_target in LINK_RE.findall(text):
+    for raw_target in LINK_RE.findall(strip_code_fences(text)):
         target = raw_target.strip().split(maxsplit=1)[0].strip("<>")
         if not target or target.startswith(("#", "http://", "https://", "mailto:")):
             continue

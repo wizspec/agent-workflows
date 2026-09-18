@@ -2,3 +2,8 @@
 __pycache__/
 *.py[cod]
 *.tmp
+
+# Artifacts from installing skills back into this checkout while testing
+/.agents/skills/
+/.claude/skills/
+/skills-lock.json

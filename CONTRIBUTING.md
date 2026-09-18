@@ -14,6 +14,7 @@ agent, operating system, or repository.
    `agents/openai.yaml`.
 6. Add the skill to the catalog in `README.md`.
 7. Run `python3 scripts/validate.py` and test any new scripts.
+8. Confirm the `skills` CLI still discovers the skill: `npx skills add . --list`.
 
 ## Authoring standard
 
