@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wizspec"
+  short_description: "Route to the right skill in this repository"
+  default_prompt: "Use $wizspec to pick the right skill for this task."

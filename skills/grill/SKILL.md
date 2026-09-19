@@ -1,10 +1,10 @@
 ---
-name: grill-with-docs
+name: grill
 description: Interrogate a plan, design, or decision one question at a time until it holds up, capturing the agreed vocabulary in a glossary and the hard calls in decision records as they settle. Use when the user asks to grill, stress-test, or pressure-test their thinking; not for routine implementation work or questions that have a single correct answer.
 license: MIT
 ---
 
-# Grill with Docs
+# Grill
 
 Interview the user relentlessly about a plan, design, or decision until you reach a shared
 understanding, and write down the language and the decisions the moment they crystallise.
