@@ -62,6 +62,14 @@ Do not create a tracking file unless the user asks for one.
 
 ## Derive the review from the document's job
 
+Before deriving anything, look for a persona index at `docs/wizspec/personas/README.md`. When a
+saved persona's interests match the document's job, cast it as the reviewer, or as the writer when
+one fits, instead of deriving a role. Build its prompt the way the `persona-interrogate` skill
+builds a packet: the persona file verbatim, its standing positions, the role, the stage, the
+subject, the review questions, and a read allowlist resolved from its knowledge boundary. The
+persona file is character, not authorization. Derive a reviewer from the job only when no persona
+fits; a repository without personas behaves exactly as described below.
+
 Do not default to a generic reader, copyeditor, or fact-checker. Select the primary reviewer
 role and review questions from the deliverable and acceptance criteria. Examples:
 

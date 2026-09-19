@@ -1,6 +1,6 @@
 ---
 name: grill
-description: Interrogate a plan, design, or decision one question at a time until it holds up, capturing the agreed vocabulary in a glossary and the hard calls in decision records as they settle. Use when the user asks to grill, stress-test, or pressure-test their thinking; not for routine implementation work or questions that have a single correct answer.
+description: Interrogate a plan, design, or decision one question at a time until it holds up, capturing the agreed vocabulary in a glossary and each hard call as a written decision as they settle. Use when the user asks to grill, stress-test, or pressure-test their thinking; not for routine implementation work or questions that have a single correct answer.
 license: MIT
 ---
 
@@ -24,8 +24,8 @@ Find the project's existing domain model and read it before opening the intervie
 - otherwise a root `CONTEXT.md` means a single context; and
 - neither means nothing has been written down yet.
 
-Existing decision records usually live in `docs/adr/`, with context-specific records beside the
-context they belong to. Read what is already there. You cannot challenge a term as inconsistent
+Existing decisions usually live in `docs/wizspec/decisions/`, with context-specific decisions beside
+the context they belong to. Read what is already there. You cannot challenge a term as inconsistent
 without knowing what the project has already agreed it means.
 
 ## Run the interview
@@ -62,7 +62,8 @@ possible — which is right?"
 ## Capture decisions as they crystallise
 
 Write things down during the session rather than afterwards. Create files lazily: add a `CONTEXT.md`
-when the first term is resolved, and a `docs/adr/` directory when the first record is warranted.
+when the first term is resolved, and a `docs/wizspec/decisions/` directory when the first decision
+is warranted.
 
 **Update the glossary inline.** The moment a term is settled, add it to the appropriate `CONTEXT.md`
 using [references/context-format.md](references/context-format.md). Do not batch these up.
@@ -70,7 +71,7 @@ using [references/context-format.md](references/context-format.md). Do not batch
 Keep `CONTEXT.md` a glossary and nothing else. It is not a spec, a scratch pad, or a home for
 implementation detail or for decisions that belong in a record.
 
-**Offer a decision record sparingly.** Propose one only when all three of these are true:
+**Offer to write a decision down sparingly.** Propose it only when all three of these are true:
 
 1. **Hard to reverse** — changing your mind later carries a meaningful cost.
 2. **Surprising without context** — a future reader will wonder why it was done this way.
@@ -78,8 +79,9 @@ implementation detail or for decisions that belong in a record.
 
 If any of the three is missing, skip it. An easily reversed decision will simply be reversed, an
 unsurprising one prompts no questions, and where there was no alternative there is nothing to record
-beyond having done the obvious thing. Use [references/adr-format.md](references/adr-format.md) for
-the template, the numbering, and the kinds of decisions that qualify.
+beyond having done the obvious thing. Use
+[references/decision-format.md](references/decision-format.md) for the template, the numbering, and
+the kinds of decisions that qualify.
 
 ## Close the session
 

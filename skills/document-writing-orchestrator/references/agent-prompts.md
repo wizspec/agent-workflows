@@ -44,6 +44,10 @@ Examples of useful role derivation:
 - For an analytical report, use a skeptical consumer tracing conclusions back to evidence.
 - For a guide, use the intended user trying to acquire the promised capability.
 
+When a saved persona is cast as the reviewer, its file replaces the reviewer role, task, and
+realistic context fields verbatim; keep the document job, acceptance criteria, allowlists, failure
+modes, and review questions, and add the persona's standing positions when it has memory.
+
 Do not copy an example when the task implies a better role. Add a separate specialist verifier only
 for a genuinely independent concern such as factual accuracy, security, accessibility, or legal
 interpretation.

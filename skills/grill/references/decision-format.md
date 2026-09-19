@@ -1,8 +1,8 @@
-# Decision record format
+# Decision format
 
-Architecture decision records live in `docs/adr/` and use sequential numbering: `0001-slug.md`,
+Decisions live in `docs/wizspec/decisions/` and use sequential numbering: `0001-slug.md`,
 `0002-slug.md`, and so on. Scan the directory for the highest existing number and increment it.
-Create the directory lazily, only when the first record is needed.
+Create the directory lazily, only when the first decision is written.
 
 ## Template
 
@@ -12,21 +12,21 @@ Create the directory lazily, only when the first record is needed.
 {One to three sentences: the context, what was decided, and why.}
 ```
 
-That is the whole requirement. A record can be a single paragraph. The value lies in capturing
+That is the whole requirement. A decision can be a single paragraph. The value lies in capturing
 *that* a decision was made and *why*, not in filling out sections.
 
 ## Optional sections
 
-Add these only when they earn their place. Most records need none of them.
+Add these only when they earn their place. Most decisions need none of them.
 
-- **Status** frontmatter (`proposed | accepted | deprecated | superseded by ADR-NNNN`), useful once
+- **Status** frontmatter (`proposed | accepted | deprecated | superseded by NNNN`), useful once
   decisions start being revisited.
 - **Considered options**, when the rejected alternatives are worth remembering.
 - **Consequences**, when non-obvious downstream effects need calling out.
 
 ## What qualifies
 
-A decision earns a record when it is hard to reverse, surprising without context, and the result of
+A decision earns writing down when it is hard to reverse, surprising without context, and the result of
 a real trade-off. In practice that tends to mean:
 
 - **Architectural shape.** "We use a monorepo." "The write model is event-sourced; the read model is

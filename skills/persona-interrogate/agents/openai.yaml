@@ -1,0 +1,4 @@
+interface:
+  display_name: "Persona Interrogate"
+  short_description: "Judge a subject through saved personas"
+  default_prompt: "Use $persona-interrogate to have this repository's personas judge the subject I name, each in isolation, and report their verdicts."

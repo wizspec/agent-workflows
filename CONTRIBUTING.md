@@ -25,7 +25,6 @@ agent, operating system, or repository.
   model names.
 - State required dependencies and provide a reasonable fallback where possible.
 - Never include secrets, personal filesystem paths, private URLs, or copied proprietary material.
-- Do not make one skill silently depend on another skill being installed.
 - Keep destructive or externally mutating actions behind explicit user intent and proportional
   confirmation.
 - Test meaningful outcomes and invariants; avoid tests that merely lock in generated prose.

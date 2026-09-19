@@ -36,16 +36,17 @@ _Avoid_: Client, buyer, account
 
 ## Single and multi-context repositories
 
-Most repositories have a single context: one `CONTEXT.md` at the root, with decision records in
-`docs/adr/`.
+Most repositories have a single context: one `CONTEXT.md` at the root, with decisions in
+`docs/wizspec/decisions/`.
 
 ```
 /
 ├── CONTEXT.md
 ├── docs/
-│   └── adr/
-│       ├── 0001-event-sourced-orders.md
-│       └── 0002-postgres-for-write-model.md
+│   └── wizspec/
+│       └── decisions/
+│           ├── 0001-event-sourced-orders.md
+│           └── 0002-postgres-for-write-model.md
 └── src/
 ```
 
@@ -57,14 +58,15 @@ either with their context or, when system-wide, at the root.
 /
 ├── CONTEXT-MAP.md
 ├── docs/
-│   └── adr/                          ← system-wide decisions
+│   └── wizspec/
+│       └── decisions/                ← system-wide decisions
 ├── src/
 │   ├── ordering/
 │   │   ├── CONTEXT.md
-│   │   └── docs/adr/                 ← context-specific decisions
+│   │   └── docs/wizspec/decisions/   ← context-specific decisions
 │   └── billing/
 │       ├── CONTEXT.md
-│       └── docs/adr/
+│       └── docs/wizspec/decisions/
 ```
 
 ```md

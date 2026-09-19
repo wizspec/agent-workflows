@@ -1,0 +1,4 @@
+interface:
+  display_name: "Personas"
+  short_description: "Route persona work to the right skill"
+  default_prompt: "Use $personas to pick the right persona skill for this task."
