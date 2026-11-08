@@ -16,6 +16,7 @@ do the work itself.
 | `grill` | A plan, design, or decision is still unsettled and has to be interrogated until it holds up. Produces shared understanding, a `CONTEXT.md` glossary, and a written decision for each call that was genuinely hard. |
 | `document-writing-orchestrator` | A substantial document has to perform a real job for a real reader. Produces the document through a writer and a reviewer drawn from that job, with sources tracked and claims checked against them. |
 | `personas` | The request is about personas: creating or revising one, or casting saved ones to judge a subject or answer in character. Routes on to `persona-interview` or `persona-interrogate`. |
+| `user-facing-text` | Text that the people using a product read has to be written or reviewed: docs, interface strings, errors, READMEs, release notes. Produces direct prose in the project's own terms, or findings with suggested rewrites. |
 
 ## Routing
 
@@ -32,6 +33,11 @@ policy, a report, a guide. The thinking is settled enough that the remaining ris
 **Anything persona-shaped goes to `personas`.** The signs are the word persona, a stakeholder the
 user wants simulated, or a subject to be judged by the people it affects rather than by a reviewer
 derived on the spot. That router decides between defining a persona and interrogating one.
+
+**Text a user will read goes to `user-facing-text`.** The signs are a label, a tooltip, an error
+message, a README, release notes, or a docs page to write or review, where the risk is in the
+sentences rather than in the structure or the sources. A substantial document goes to
+`document-writing-orchestrator`, which can apply `user-facing-text` to the prose it produces.
 
 **Grill first, then `personas`, when the user wants a settled plan judged by the people it
 affects.** Grill settles the vocabulary and the hard calls; the interrogation then tests the result

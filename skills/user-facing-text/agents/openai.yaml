@@ -1,0 +1,4 @@
+interface:
+  display_name: "User-Facing Text"
+  short_description: "Write or review text that users read"
+  default_prompt: "Use $user-facing-text to review this text for what a reader would stumble on, and suggest rewrites."
