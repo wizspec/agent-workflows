@@ -17,6 +17,7 @@ do the work itself.
 | `document-writing-orchestrator` | A substantial document has to perform a real job for a real reader. Produces the document through a writer and a reviewer drawn from that job, with sources tracked and claims checked against them. |
 | `personas` | The request is about personas: creating or revising one, or casting saved ones to judge a subject or answer in character. Routes on to `persona-interview` or `persona-interrogate`. |
 | `user-facing-text` | Text that the people using a product read has to be written or reviewed: docs, interface strings, errors, READMEs, release notes. Produces direct prose in the project's own terms, or findings with suggested rewrites. |
+| `fresh-eyes` | The user wants something new, and the risk is that it comes out like what has been done before. Produces an idea from an agent that knows nothing about the project, grounded in the facts needed to make it real. |
 
 ## Routing
 
@@ -38,6 +39,11 @@ derived on the spot. That router decides between defining a persona and interrog
 message, a README, release notes, or a docs page to write or review, where the risk is in the
 sentences rather than in the structure or the sources. A substantial document goes to
 `document-writing-orchestrator`, which can apply `user-facing-text` to the prose it produces.
+
+**A request for something new goes to `fresh-eyes`.** The signs are that the user wants an idea
+rather than help with one they already have, or says that results keep coming out like the last
+ones. The risk is in where the idea comes from. Once the user has chosen an idea, `grill` can
+pressure-test it, and the work of making it goes wherever that work fits.
 
 **Grill first, then `personas`, when the user wants a settled plan judged by the people it
 affects.** Grill settles the vocabulary and the hard calls; the interrogation then tests the result
