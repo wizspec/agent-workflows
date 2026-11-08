@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fresh Eyes"
+  short_description: "Get a new idea from an agent with no project history"
+  default_prompt: "Use $fresh-eyes to get an idea for what I describe from an agent that knows nothing about this project, then ground it in what can actually be made."

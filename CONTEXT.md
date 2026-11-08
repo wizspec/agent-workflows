@@ -11,6 +11,49 @@ A call that was hard to reverse, would surprise a future reader, and came out of
 written down as one numbered file under `docs/wizspec/decisions/` the moment it settles.
 _Avoid_: ADR, architecture decision record, decision record
 
+## Fresh eyes
+
+**Parent**:
+The agent running `fresh-eyes`, which holds the project, its history, and the conversation with the
+user. It answers the child's grounding questions and reports to the user, and never suggests the
+idea.
+_Avoid_: elephant, mentor, supervisor, orchestrator
+
+**Child**:
+A fresh, isolated agent that receives only the brief and knows nothing about the project, though it
+may search the web. It has the idea without weighing how hard it would be to make, asks for the facts
+it needs to make it real, and decides what to do with the answers.
+_Avoid_: son, goldfish, subagent, worker
+
+**Brief**:
+Everything the child is given at the start: the want, the hard limits, and what to return. It
+contains no precedent.
+_Avoid_: prompt, packet, spec
+
+**Hard limit**:
+Anything that would make an idea unusable if broken, such as the medium, a maximum length, a
+deadline, or a platform's rules. The only knowledge of the project that goes into the brief.
+_Avoid_: constraint, rule
+
+**Precedent**:
+Anything about how the project has done things: past work, house style, conventions, what has worked,
+what the audience is known to like, and the parent's own sense of the answer. A habit is precedent,
+however well it has served. Never volunteered to the child; given only when the child asks for it
+after naming its heart, marked as precedent, and always reported to the user beside the idea.
+_Avoid_: context, history, background
+
+**Grounding**:
+The exchange in which the child asks for the facts its idea depends on and the parent answers with
+what is true, available, or possible, or with the fact that makes something impossible. It narrows
+the idea to what can be made, never carries a judgement of the idea, and carries precedent only when
+the child asks for it.
+_Avoid_: clarification, feedback, guidance
+
+**Heart**:
+The part of the child's idea that, if lost, would make it a different idea. Named by the child, and
+the check that later development is measured against.
+_Avoid_: core, essence, hook
+
 ## Personas
 
 **Persona**:

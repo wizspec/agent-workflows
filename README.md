@@ -14,10 +14,12 @@ agents that read the format.
 | Skill | What it does |
 | --- | --- |
 | [`document-writing-orchestrator`](skills/document-writing-orchestrator/) | Plans, drafts, revises, and validates substantial documents through controlled source use and a reviewer derived from the document's real-world job. |
+| [`fresh-eyes`](skills/fresh-eyes/) | Gets an idea for something new from an agent that knows nothing about the project, then grounds it by answering that agent's questions with facts. |
 | [`grill`](skills/grill/) | Interrogates a plan or design one question at a time, capturing the agreed vocabulary in a glossary and each hard call as a written decision as they settle. |
 | [`persona-interrogate`](skills/persona-interrogate/) | Casts saved personas as isolated agents to judge a subject or answer questions in character, and synthesises their findings and verdicts. |
 | [`persona-interview`](skills/persona-interview/) | Creates or revises a persona by interview: derives a draft from the repository, grills the user, dry-runs the result, and saves it. |
 | [`personas`](skills/personas/) | Routes persona work to `persona-interview` or `persona-interrogate`. |
+| [`user-facing-text`](skills/user-facing-text/) | Writes or reviews documentation, interface strings, errors, READMEs, and release notes so they say what they mean directly, using the project's own glossary and conventions. |
 | [`wizspec`](skills/wizspec/) | Routes a request to the skill in this repository that fits it. |
 
 ## Install
